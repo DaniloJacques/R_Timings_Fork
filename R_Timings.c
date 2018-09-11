@@ -145,10 +145,10 @@ void writeTimings(FILE *f, VBIOS_STRAP *Timings) {
 	fprintf(f, "T32AW = %u\n", Timings -> SEQ_MISC_TIMING2.T32AW);
 	fprintf(f, "TWDATATR = %u\n", Timings -> SEQ_MISC_TIMING2.TWDATATR);
 	fprintf(f, "####MC_SEQ_MISC1_3_8####\n");
-	fprintf(f, "WL= %u\n", Timings->SEQ_MISC1.WL);
-	fprintf(f, "CL= %u\n", (5 + (Timings->SEQ_MISC1.CL)) | ( Timings->SEQ_MISC8.CLEHF <<4));
-	fprintf(f, "WR= %u\n", (4 + (Timings->SEQ_MISC1.WR)) | ( Timings->SEQ_MISC8.WREHF <<4));
- 	fprintf(f, "TRAS= %u\n", Timings->SEQ_MISC3.TRAS);
+	fprintf(f, "WL = %u\n", Timings->SEQ_MISC1.WL);
+	fprintf(f, "CL = %u\n", (5 + (Timings->SEQ_MISC1.CL)) | ( Timings->SEQ_MISC8.CLEHF <<4));
+	fprintf(f, "WR = %u\n", (4 + (Timings->SEQ_MISC1.WR)) | ( Timings->SEQ_MISC8.WREHF <<4));
+ 	fprintf(f, "TRAS = %u\n", Timings->SEQ_MISC3.TRAS);
 	fprintf(f, "####ARB_DRAM_TIMING####\n");
 	fprintf(f, "ACTRD = %u\n", Timings -> ARB_DRAM_TIMING.ACTRD);
 	fprintf(f, "ACTWR = %u\n", Timings -> ARB_DRAM_TIMING.ACTWR);
