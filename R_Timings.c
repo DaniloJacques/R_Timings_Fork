@@ -241,7 +241,7 @@ void readTimings(FILE *f, uint32_t *buf) {
 	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, WL_OFFSET);
 	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, CL_OFFSET);
 	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, WR_OFFSET);
-	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, TRAS_TURN_OFFSET);
+	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, TRAS_OFFSET);
 }
 
 int main(int argc, char **argv) {
