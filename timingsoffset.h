@@ -128,10 +128,10 @@
 
 #define SEQ_MISC_NOVOS_OFFSET 12U
 //typedef struct _SEQ_MISC_NOVOS_FORMAT {
-#define WL_OFFSET 32U // : 8;
-#define CL_OFFSET 24U // : 8;
-#define WR_OFFSET 16U // : 8;
-#define TRAS_OFFSET 8U // : 8;
+#define WL_OFFSET 32U // : 3;
+#define CL_OFFSET 24U // : 4;
+#define WR_OFFSET 16U // : 4;
+#define TRAS_OFFSET 8U // : 6;
 //} SEQ_MISC_NOVOS_FORMAT; // 4 bytes
 
 #ifdef STRAP_R9
