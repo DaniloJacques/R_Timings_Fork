@@ -229,10 +229,6 @@ void readTimings(FILE *f, uint32_t *buf) {
 	readValue(f, buf, GET_VALUE, SEQ_MISC_TIMING2_OFFSET, T32AW_OFFSET);
 	readValue(f, buf, GET_VALUE, SEQ_MISC_TIMING2_OFFSET, TWDATATR_OFFSET);
     fscanf(f, SKIP_LINE);
-	readValue(f, buf, GET_VALUE, SEQ_MISC1_OFFSET, WL_OFFSET);
-	readValue(f, buf, GET_VALUE, SEQ_MISC1_OFFSET, CL_OFFSET);
-	readValue(f, buf, GET_VALUE, SEQ_MISC1_OFFSET, WR_OFFSET);
-    fscanf(f, SKIP_LINE);
 	readValue(f, buf, GET_VALUE, SEQ_MISC3_OFFSET, TRAS_OFFSET);
 	fscanf(f, SKIP_LINE);
 	readValue(f, buf, GET_VALUE, ARB_DRAM_TIMING_OFFSET, ACTRD_OFFSET);
