@@ -144,11 +144,6 @@ void writeTimings(FILE *f, VBIOS_STRAP *Timings) {
 	fprintf(f, "TCRCWL = %u\n", Timings -> SEQ_MISC_TIMING2.TCRCWL);
 	fprintf(f, "T32AW = %u\n", Timings -> SEQ_MISC_TIMING2.T32AW);
 	fprintf(f, "TWDATATR = %u\n", Timings -> SEQ_MISC_TIMING2.TWDATATR);
-	fprintf(f, "####MC_SEQ_MISC1_3_8####\n");
-	fprintf(f, "WL = %u\n", Timings->SEQ_MISC1.WL);
-	fprintf(f, "CL = %u\n", (5 + (Timings->SEQ_MISC1.CL)) | ( Timings->SEQ_MISC8.CLEHF <<4));
-	fprintf(f, "WR = %u\n", (4 + (Timings->SEQ_MISC1.WR)) | ( Timings->SEQ_MISC8.WREHF <<4));
- 	fprintf(f, "TRAS = %u\n", Timings->SEQ_MISC3.TRAS);
 	fprintf(f, "####ARB_DRAM_TIMING####\n");
 	fprintf(f, "ACTRD = %u\n", Timings -> ARB_DRAM_TIMING.ACTRD);
 	fprintf(f, "ACTWR = %u\n", Timings -> ARB_DRAM_TIMING.ACTWR);
@@ -159,6 +154,11 @@ void writeTimings(FILE *f, VBIOS_STRAP *Timings) {
 	fprintf(f, "RP = %u\n", Timings -> ARB_DRAM_TIMING2.RP);
 	fprintf(f, "WRPLUSRP = %u\n", Timings -> ARB_DRAM_TIMING2.WRPLUSRP);
 	fprintf(f, "BUS_TURN = %u\n", Timings -> ARB_DRAM_TIMING2.BUS_TURN);
+	fprintf(f, "####SEQ_MISC_NOVOS####\n");
+	fprintf(f, "WL = %u\n", Timings->SEQ_MISC1.WL);
+	fprintf(f, "CL = %u\n", (5 + (Timings->SEQ_MISC1.CL)) | ( Timings->SEQ_MISC8.CLEHF <<4));
+	fprintf(f, "WR = %u\n", (4 + (Timings->SEQ_MISC1.WR)) | ( Timings->SEQ_MISC8.WREHF <<4));
+ 	fprintf(f, "TRAS = %u\n", Timings->SEQ_MISC3.TRAS);
 }
 
 void readValue(FILE *f, uint32_t *buf, const char *format_str, size_t buf_index, size_t shift) {
@@ -238,9 +238,10 @@ void readTimings(FILE *f, uint32_t *buf) {
 	readValue(f, buf, GET_VALUE, ARB_DRAM_TIMING2_OFFSET, WRPLUSRP_OFFSET);
 	readValue(f, buf, GET_VALUE, ARB_DRAM_TIMING2_OFFSET, BUS_TURN_OFFSET);
 	fscanf(f, SKIP_LINE);
-	readValue(f, buf, GET_MISC_VALUE, SEQ_MISC1_OFFSET, 32U);
-	readValue(f, buf, GET_MISC_VALUE, SEQ_MISC3_OFFSET, 32U);
-	readValue(f, buf, GET_MISC_VALUE, SEQ_MISC8_OFFSET, 32U);
+	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, WL_OFFSET);
+	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, CL_OFFSET);
+	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, WR_OFFSET);
+	readValue(f, buf, GET_VALUE, SEQ_MISC_NOVOS_OFFSET, TRAS_TURN_OFFSET);
 }
 
 int main(int argc, char **argv) {
