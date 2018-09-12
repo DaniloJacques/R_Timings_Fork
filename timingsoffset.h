@@ -106,11 +106,7 @@
 #define TWDATATR_OFFSET 4U // : 4;
 //} SEQ_MISC_TIMING2_FORMAT; // 4 bytes
 
-#define SEQ_MISC1_OFFSET 7U
-#define SEQ_MISC3_OFFSET 8U
-#define SEQ_MISC8_OFFSET 9U
-
-#define ARB_DRAM_TIMING_OFFSET 10U
+#define ARB_DRAM_TIMING_OFFSET 7U
 //typedef struct _ARB_DRAM_TIMING_FORMAT {
 #define ACTRD_OFFSET 32U // : 8;
 #define ACTWR_OFFSET 24U // : 8;
@@ -118,7 +114,7 @@
 #define RASMACTWR_OFFSET 8U // : 8;
 //} ARB_DRAM_TIMING_FORMAT; // 4 bytes
 
-#define ARB_DRAM_TIMING2_OFFSET 11U
+#define ARB_DRAM_TIMING2_OFFSET 8U
 //typedef struct _ARB_DRAM_TIMING2_FORMAT {
 #define RAS2RAS_OFFSET 32U // : 8;
 #define RP_OFFSET 24U // : 8;
@@ -126,7 +122,7 @@
 #define BUS_TURN_OFFSET 8U // : 8;
 //} ARB_DRAM_TIMING2_FORMAT; // 4 bytes
 
-#define SEQ_MISC_NOVOS_OFFSET 12U
+#define SEQ_MISC_NOVOS_OFFSET 9U
 //typedef struct _SEQ_MISC_NOVOS_FORMAT {
 #define WL_OFFSET 32U // : 3;
 #define CL_OFFSET 24U // : 4;
